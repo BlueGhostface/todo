@@ -5,16 +5,18 @@ import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Value;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
 
 
-
+@Entity
 public class TodoItem {
     
-    @GeneratedValue
+    @GeneratedValue @Id
     public UUID todoId;
 
     
@@ -24,6 +26,7 @@ public class TodoItem {
     public String description;
     @Getter@Setter
     public Status status;
+
 
     public TodoItem() {
         this.creationTime = LocalDateTime.now();
