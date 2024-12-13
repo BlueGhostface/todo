@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,7 +17,7 @@ import lombok.Setter;
 @Entity
 public class TodoItem {
     
-    @GeneratedValue @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) @Id
     public UUID todoId;
 
     
